@@ -1,67 +1,254 @@
 <template>
-  <section>
-    <div class="text-center countdown-container">
-      <div class="countdown-wrapper">
-        <br />
-        <p class="countdown-wrapper-name-sm">Wedding</p>
-        <p class="countdown-wrapper-name">
-          Chí Hữu <i class="fas fa-heart"></i> Ái Trinh
-        </p>
+  <div class="hearts-loader" v-if="loading">
+    <i class="fa-solid fa-heart heart-icon" />
+    <i class="fa-solid fa-heart heart-icon" />
+    <i class="fa-solid fa-heart heart-icon" />
+    <i class="fa-solid fa-heart heart-icon" />
+  </div>
+  <main v-else>
 
-        <div id="countdown-display" class="countdown-wrapper-name-sm">
-          <div>26.09.2024</div>
-          <hr />
-          <div style="font-size: 1.2rem">Ngày : Giờ : Phút : Giây</div>
-          {{ countdownRef }}
+    <section>
+      <div
+        id="carouselSlidesOnly"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="4000">
+            <img
+              src="https://trinhhuu.s3.ap-southeast-1.amazonaws.com/KAH00208.jpg"
+              class="d-block w-100"
+              alt="/KAH00850.jpg"
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="4000">
+            <img
+              src="https://trinhhuu.s3.ap-southeast-1.amazonaws.com/KAH00716.jpg"
+              class="d-block w-100"
+              alt="/KAH00716.jpg"
+            />
+          </div>
+          <div class="carousel-item" data-bs-interval="4000">
+            <img
+              src="https://trinhhuu.s3.ap-southeast-1.amazonaws.com/KAH00785.jpg"
+              class="d-block w-100"
+              alt="/KAH00777.jpg"
+            />
+          </div>
         </div>
       </div>
+      <div class="text-center section-container">
+        <div class="section-wrapper">
+          <div>
+            <p class="section-wrapper-name sm">Save the Date</p>
+            <div class="section-wrapper-name">
+              <div
+                class="main-title"
+                style="
+                  display: flex;
+                  justify-content: space-around;
+                  align-items: center;
+                "
+              >
+                Chí Hữu
+                <i class="fas fa-heart"></i>
+                Ái Trinh
+              </div>
+            </div>
+          </div>
 
-      <div class="blur">
-        <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
-        <span class="arrow" style="top: 18px">
-          <i class="fa-solid fa-angle-down"></i>
-        </span>
-      </div>
-    </div>
-    <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="4000">
-          <img
-            src="https://trinhhuu.s3.ap-southeast-1.amazonaws.com/KAH00009.jpg"
-            class="d-block w-100"
-            alt="/KAH00850.jpg"
-          />
-        </div>
-        <div class="carousel-item" data-bs-interval="4000">
-          <img
-            src="https://trinhhuu.s3.ap-southeast-1.amazonaws.com/KAH00716.jpg"
-            class="d-block w-100"
-            alt="/KAH00716.jpg"
-          />
-        </div>
-        <div class="carousel-item" data-bs-interval="4000">
-          <img
-            src="https://trinhhuu.s3.ap-southeast-1.amazonaws.com/KAH00785.jpg"
-            class="d-block w-100"
-            alt="/KAH00777.jpg"
-          />
+          <div id="section-display" class="section-wrapper-name sm">
+            26.09.2024
+            <hr />
+            <p style="font-size: 2rem; margin-bottom: 0">
+              Ngày : Giờ : Phút : Giây
+            </p>
+            {{ countdownRef }}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="couple-section my-5 py-3" id="couple">
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <div class="col col-xs-12 pt-5">
+            <div class="couple-area clearfix">
+              <div class="text-grid bride">
+                <div class="couple-img">
+                  <img width="100" height="100" src="/images/cr.png" alt="" />
+                </div>
+                <h3>Chí Hữu</h3>
+                <ul class="d-flex justify-content-end p-0">
+                  <li>
+                    <a
+                      href="https://www.facebook.com/chishuuwx/"
+                      target="_blank"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/michaeltran1203/"
+                      target="_blank"
+                      ><i class="fa fa-linkedin" aria-hidden="true"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.instagram.com/chishuuwx/"
+                      target="_blank"
+                      ><i class="fa fa-instagram" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+                <p>
+                  Chàng trai đến từ vùng đất đỏ Bình Phước. Là một chàng trai
+                  năng động, ít nói nhưng lại rất tình cảm.
+                </p>
+              </div>
+              <div class="middle-couple-pic">
+                <img
+                  src="https://trinhhuu.s3.ap-southeast-1.amazonaws.com/KAH01078.jpg"
+                  alt=""
+                />
+                <div class="frame-img">
+                  <img src="/images/shape.png" alt="" />
+                </div>
+              </div>
+              <div class="text-grid groom">
+                <div class="couple-img">
+                  <img width="100" height="100" src="/images/cd.png" alt="" />
+                </div>
+                <h3>Ái Trinh</h3>
+                <ul class="p-0">
+                  <li>
+                    <a
+                      href="https://www.facebook.com/skynuel.hoang/"
+                      target="_blank"
+                      ><i class="fa fa-facebook" aria-hidden="true"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <a href="https://www.linkedin.com" target="_blank"
+                      ><i class="fa fa-linkedin" aria-hidden="true"></i
+                    ></a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.instagram.com/trynh_helen/"
+                      target="_blank"
+                      ><i class="fa fa-instagram" aria-hidden="true"></i
+                    ></a>
+                  </li>
+                </ul>
+                <p>
+                  Cô gái đến từ thành phố biển Phan Thiết. Là cô gái vui vẻ, hòa
+                  đồng với mọi người và lúc nào cũng nở nụ cười trên môi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-accessibilities">
+      <div class="container">
+        <div class="row button-accessibilities">
+          <div class="col col-lg-12">
+            <div class="text-center btn-container">
+              <a
+                href="#rsvp"
+                class="accessibility-btn red-btn album btn btn-danger btn-lg"
+              >
+                <span class="content-button">
+                  <i class="fa-solid fa-message"></i>
+                  &nbsp; Gửi lời chúc
+                </span>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="accessibility-btn red-btn album btn btn-danger btn-lg buttonDonate"
+              >
+                <span class="content-button">
+                  <i class="fa-solid fa-sack-dollar" />
+                  &nbsp; Mừng cưới
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <button id="play-button" class="play-button" @click="togglePlaying">
       <i class="fas" :class="playing ? 'fa-pause' : 'fa-play'"></i>
     </button>
-  </section>
-</template>
+    <div class="player-secondary-content">
+      Click vào đây nếu bạn muốn phát nhạc!
+    </div>
+    <div class="blur">
+      <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
+      <span class="arrow" style="top: 18px">
+        <i class="fa-solid fa-angle-down"></i>
+      </span>
+    </div>
 
+    <div id="menu-access" class="">
+      <div class="btn-menu-open" style="display: none">
+        <img src="/svg/menu-open.svg" alt="" />
+      </div>
+      <div class="btn-menu-close" style="display: block">
+        <img src="/svg/menu-close.svg" alt="" />
+      </div>
+      <ul class="p-0 m-0 list-menu-icon" style="opacity: 1">
+        <li class="text-center">
+          <a href="#rsvp" class="text-white">
+            <span class="content-button tooltipBtn">
+              <span class="tooltiptext" style="">Gửi lời chúc</span>
+              <img
+                class="access-icon"
+                src="https://cdn.biihappy.com/ziiweb/images/static/common/wishes.png"
+                alt=""
+              />
+            </span>
+          </a>
+        </li>
+
+        <li class="text-center buttonDonate">
+          <a href="#donate" class="text-white">
+            <span class="content-button tooltipBtn">
+              <span class="tooltiptext" style="">Mừng cưới</span>
+              <img
+                class="access-icon"
+                src="https://cdn.biihappy.com/ziiweb/images/static/common/money_bag.png"
+                alt=""
+              />
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- <DonateModel /> -->
+  </main>
+</template>
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
+import { handleMenu } from "./assets/js/handle-menu";
+import DonateModel from "./components/DonateModel.vue";
 
 const date = new Date("2024-09-26T00:00:00.000Z");
 const countdownRef = ref("");
+const loading = ref(false);
 const playing = ref(false);
 let audio = new Audio(
-  "https://khanh-uyen.s3.ap-northeast-1.amazonaws.com/musics/play-backgroud.mp3"
+  "https://cdn.biihappy.com/ziiweb/wedding-musics/IDo-911.mp3"
 );
 
 function togglePlaying() {
@@ -95,18 +282,37 @@ function countTime() {
     countdownRef.value = formattedTime;
   }, 1000);
 }
+function showRecommendPlayMusic() {
+  const playerSecondaryContent = document.getElementsByClassName(
+    "player-secondary-content"
+  )[0] as HTMLElement;
+
+  setTimeout(() => {
+    playerSecondaryContent.classList.add("transform-0");
+
+    setTimeout(() => {
+      playerSecondaryContent.classList.remove("transform-0");
+    }, 2000);
+  }, 1000);
+}
 
 onMounted(() => {
+  loading.value = true;
+  setTimeout(() => {
+    loading.value = false;
+  }, 2000)
   countTime();
+  handleMenu();
+  showRecommendPlayMusic();
 });
 </script>
 
 <style lang="scss">
 :root {
-  --main-color: #30d17f;
+  --main-color: white;
   --name-color: white;
   --play-color: green;
-  --arrow-color: gray;
+  --arrow-color: #41464b;
 }
 
 .play-button {
@@ -119,12 +325,40 @@ onMounted(() => {
   border-radius: 50%;
   padding: 8px 16px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
 
   .fas {
     color: var(--play-color);
   }
 }
+.transform-0 {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.player-secondary-content {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  position: fixed;
+  bottom: 50px;
+  left: 1rem;
+  width: 310px;
+  background: #fff;
+  height: 40px;
+  padding: 8px 11px 8px 50px;
+  border: 1px solid #df4759;
+  border-radius: 30px;
+  z-index: 1;
+  font-size: 14px;
+  transition: all 200ms ease-in;
+  font-family: arial;
+  font-weight: 200;
+  color: #000;
+}
+
 .carousel-item {
   height: 100vh;
 
@@ -133,7 +367,8 @@ onMounted(() => {
     object-fit: contain;
   }
 }
-.countdown-container {
+
+.section-container {
   position: absolute;
   top: 0;
   height: 100%;
@@ -142,35 +377,43 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.2);
 
-  .countdown-wrapper {
+  .section-wrapper {
     font-size: 40px;
 
-    .countdown-wrapper-name,
-    .countdown-wrapper-name-sm {
-      font-size: 50px;
+    .section-wrapper-name {
+      font-weight: 100;
       margin-bottom: 0px;
-      font-weight: bold;
       box-sizing: border-box;
       color: var(--name-color, #333);
       font-family: "Dancing Script", cursive;
       font-optical-sizing: auto;
       font-style: normal;
-      text-shadow: -1px 0 var(--main-color), 1px 0 var(--main-color),
-        0 -1px var(--main-color), 0 1px var(--main-color);
+      text-shadow: -1px 0 #333, 1px 0 #333, 0 -1px #333, 0 1px #333;
+
+      .main-title {
+        font-size: 70px;
+        margin-bottom: 0px;
+        font-family: "Great Vibes", cursive;
+        color: red;
+        text-shadow: -1px 0 var(--main-color), 1px 0 var(--main-color),
+          0 -1px var(--main-color), 0 1px var(--main-color);
+      }
 
       .fa-heart {
+        gap: 3px;
+        margin: 0 0.5rem;
         color: red;
         font-size: 2rem;
         text-shadow: -1px 0 white, 1px 0 white, 0 -1px white, 0 1px white;
       }
+
+      .sm {
+        font-size: 1.8rem;
+      }
     }
 
-    .countdown-wrapper-name-sm {
-      font-size: 1.5rem;
-    }
-    .countdown-wrapper-date {
+    .section-wrapper-date {
       font-size: 35px;
       color: red;
       font-style: italic;
@@ -182,6 +425,7 @@ onMounted(() => {
 .blur {
   position: fixed;
   bottom: 5rem;
+  left: 50%;
   transform: translateX(-1rem);
 }
 
@@ -202,10 +446,16 @@ onMounted(() => {
     transform: translateY(-40px);
     opacity: 0;
   }
+
   70%,
   100% {
     transform: translateY(0);
     opacity: 0.3;
   }
 }
+</style>
+
+<style lang="scss">
+
+@import url("./assets/css/style.scss");
 </style>
