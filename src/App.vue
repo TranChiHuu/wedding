@@ -149,7 +149,7 @@
             Sổ Lưu Bút<span> <i class="fas fa-heart"></i></span>
           </h2>
         </div>
-        <p>
+        <p class="px-4 text-center">
           Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến
           đám cưới của chúng mình!
         </p>
