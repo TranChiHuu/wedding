@@ -49,14 +49,11 @@ export function handleMenu() {
         if (menuCloseButton.style.display !== "none") {
           // Add class and show tooltip text
           tooltipChildren[i].classList.add("shake");
-          tooltipChildren[
-            i
-          ].children[0].children[0].children[0].style.visibility = "visible";
+          tooltipChildren[i].children[0].children[0].children[0].style.visibility =
+            "visible";
           setTimeout(() => {
             // Remove shake class and hide tooltip text
-            tooltipChildren[
-              i
-            ].children[0].children[0].children[0].style.visibility = "";
+            tooltipChildren[i].children[0].children[0].children[0].style.visibility = "";
             tooltipChildren[i].classList.remove("shake");
           }, 3000);
         } else {
