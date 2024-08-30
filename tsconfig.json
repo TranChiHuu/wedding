@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "target": "es6",               // Compile to ES6 JavaScript
+    "module": "es6",               // Use ES6 module system
+    "outDir": "./dist",            // Output directory for compiled files
+    "rootDir": "./src",            // Root directory of TypeScript files
+    "skipLibCheck": true,
     "allowJs": true,
     "noImplicitAny": false
   },

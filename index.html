@@ -2,32 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="images/heart.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/images/heart.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Trinh Hữu's wedding website, love story and memories."
+    />
+    <meta name="keywords" content="Trinh Hữu's wedding, love story, memories" />
+    <meta property="og:title" content="Trinh Hữu's Wedding" />
+    <meta
+      property="og:description"
+      content="Trinh Hữu's love story and wedding memories."
+    />
+    <meta property="og:image" content="/images/heart.jpg" />
+    <meta property="og:url" content="https://trinhhuu.site/" />
+    <meta name="twitter:site" content="@trinhhuuwedding" />
+    <meta name="twitter:title" content="Trinh Hữu Wedding" />
+    <meta
+      name="twitter:description"
+      content="Trinh Hữu's love story and wedding memories."
+    />
+    <meta name="twitter:image" content="images/heart.jpg" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
     <title>Trinh Hữu Wedding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/e6dd7e8f67.js"
       crossorigin="anonymous"
     ></script>
-
-    <script src="/src/assets/js/snow.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lozad"></script>
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+      observer.observe();
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        //
+      });
+    </script>
   </body>
 </html>
