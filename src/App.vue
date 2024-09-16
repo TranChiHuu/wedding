@@ -762,7 +762,7 @@ import { ref, onMounted, reactive, onUnmounted, Ref } from "vue";
 import { handleMenu } from "./assets/js/handle-menu";
 import { images } from "./assets/js/constant";
 // import DonateModel from "./components/DonateModel.vue";
-import { Snowfall, SnowflakeOptions } from "./assets/js/snow";
+// import { Snowfall, SnowflakeOptions } from "./assets/js/snow";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -859,24 +859,24 @@ function showRecommendPlayMusic() {
   }, 1000);
 }
 
-function snow() {
-  let defaultParams: SnowflakeOptions = {
-    count: 60,
-    minRadius: 10,
-    maxRadius: 23,
-    minSpeed: 3,
-    maxSpeed: 6,
-    text: "💖",
-    color: "#99ccff",
-    zIndex: "1000",
-  };
+// function snow() {
+//   let defaultParams: SnowflakeOptions = {
+//     count: 60,
+//     minRadius: 10,
+//     maxRadius: 23,
+//     minSpeed: 3,
+//     maxSpeed: 6,
+//     text: "💖",
+//     color: "#99ccff",
+//     zIndex: "1000",
+//   };
 
-  const ICON = ["💞", "❤️", "💖"];
-  const index = Math.floor(Math.random() * ICON.length);
-  const icon = ICON[index];
-  defaultParams.text = icon;
-  new Snowfall(defaultParams);
-}
+//   const ICON = ["💞", "❤️", "💖"];
+//   const index = Math.floor(Math.random() * ICON.length);
+//   const icon = ICON[index];
+//   defaultParams.text = icon;
+//   new Snowfall(defaultParams);
+// }
 
 function handleFireBase() {
   const latestQuery = query(collection(db, "messages"), orderBy("date"));
@@ -962,7 +962,7 @@ onMounted(async () => {
   countTime();
   handleMenu();
   showRecommendPlayMusic();
-  snow();
+  // snow();
 
   // Listen to scroll events
   window.onscroll = function () {
