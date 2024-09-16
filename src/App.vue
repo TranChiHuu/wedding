@@ -727,7 +727,9 @@
           <li class="text-center">
             <a href="javascript:;" @click="showConfirm">
               <span class="content-button tooltipBtn">
-                <span class="tooltiptext" style="right: 230%">Xác nhận tham dự</span>
+                <span class="tooltiptext" style="right: 230%"
+                  >Xác nhận tham dự</span
+                >
                 <i class="fa-solid fa-square-check"></i>
               </span>
             </a>
@@ -923,13 +925,11 @@ let audio = new Audio(
 );
 
 function showConfirm() {
-  // eslint-disable-next-line
-  window.$("#myModal").modal("show");
+  (window as any).$("#myModal").modal("show");
 }
 
 function hideConfirm() {
-  // eslint-disable-next-line
-  window.$("#myModal").modal("hide");
+  (window as any).$("#myModal").modal("hide");
 }
 
 function saveWish() {
@@ -1134,8 +1134,7 @@ onMounted(async () => {
   Array.from(imgs).forEach((img) => {
     img.classList.add("lozad");
   });
-
-  window.$(".carousel").carousel({
+  (window as any).$(".carousel").carousel({
     interval: 3000,
   });
 });
