@@ -244,16 +244,13 @@ interface Wish {
 
 import { ref, onMounted, reactive, onUnmounted, Ref } from "vue";
 import { handleMenu } from "./assets/js/handle-menu";
-import DonateModel from "./components/DonateModel.vue";
-import { Snowfall, SnowflakeOptions } from "./assets/js/snow";
+// import DonateModel from "./components/DonateModel.vue";
+// import { Snowfall, SnowflakeOptions } from "./assets/js/snow";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
   onSnapshot,
   collection,
-  doc,
-  deleteDoc,
-  setDoc,
   addDoc,
   orderBy,
   query,
@@ -405,7 +402,7 @@ onMounted(async () => {
   countTime();
   handleMenu();
   showRecommendPlayMusic();
-  snow();
+  // snow();
   slide();
 });
 </script>
