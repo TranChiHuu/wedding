@@ -1,5 +1,20 @@
 <template>
-  <Transition :duration="1000">
+  <div
+    v-if="passengers.length > 0"
+    class="text-left mt-4 p-4"
+    style="border: 2px solid red"
+  >
+    <div
+      v-for="(passenger, index) in passengers"
+      :key="index"
+      class="mb-3"
+      style="background-color: gold; padding: 7px; border-radius: 5px"
+    >
+      <div style="font-weight: 500">{{ passenger?.name }}:</div>
+      <span>{{ passenger?.text }}</span>
+    </div>
+  </div>
+  <Transition v-else :duration="1000">
     <main class="hearts-loader" v-if="loading">
       <div class="back"></div>
       <div class="heart-item"></div>
@@ -167,6 +182,16 @@
           <div class="row button-accessibilities">
             <div class="col col-lg-12">
               <div class="text-center btn-container">
+                <a
+                  href="javascript:;"
+                  class="accessibility-btn red-btn album btn btn-danger btn-lg"
+                  @click="showConfirm"
+                >
+                  <span class="content-button">
+                    <i class="fa-solid fa-square-check"></i>
+                    &nbsp; Xác nhận tham dự
+                  </span>
+                </a>
                 <a
                   href="#wish"
                   class="accessibility-btn red-btn album btn btn-danger btn-lg"
@@ -583,10 +608,10 @@
 
                   <p class="mb-1">Ngân hàng: <strong>TPBank</strong></p>
                   <p class="mb-1">
-                    Tên tài khoản: <strong>3868 8638 888</strong>
+                    Số tài khoản: <strong>3868 8638 888</strong>
                   </p>
                   <p class="mb-1">
-                    Số tài khoản: <strong>Trần Chí Hữu</strong>
+                    Tên tài khoản: <strong>Trần Chí Hữu</strong>
                   </p>
                 </div>
               </div>
@@ -604,10 +629,10 @@
 
                   <p class="mb-1">Ngân hàng: <strong>TechcomBank</strong></p>
                   <p class="mb-1">
-                    Tên tài khoản: <strong>19030772691014</strong>
+                    Số tài khoản: <strong>19030772691014</strong>
                   </p>
                   <p class="mb-1">
-                    Số tài khoản: <strong>Hoàng Thị ÁI Trinh</strong>
+                    Tên tài khoản: <strong>Hoàng Thị ÁI Trinh</strong>
                   </p>
                 </div>
               </div>
@@ -700,6 +725,14 @@
         </div>
         <ul class="p-0 m-0 list-menu-icon" style="opacity: 1">
           <li class="text-center">
+            <a href="javascript:;" @click="showConfirm">
+              <span class="content-button tooltipBtn">
+                <span class="tooltiptext" style="right: 230%">Xác nhận tham dự</span>
+                <i class="fa-solid fa-square-check"></i>
+              </span>
+            </a>
+          </li>
+          <li class="text-center">
             <a href="#wish">
               <span class="content-button tooltipBtn">
                 <span class="tooltiptext" style="">Gửi lời chúc</span>
@@ -719,8 +752,10 @@
           <li class="text-center" id="scrollBtn">
             <a href="#top">
               <span class="content-button tooltipBtn">
-                <span class="tooltiptext" style="">Lên đầu trang</span>
-                <i class="fa-solid fa-jet-fighter-up"></i> </span
+                <span class="tooltiptext" style="right: 300%"
+                  >Lên đầu trang</span
+                >
+                <i class="fa-solid fa-up-long"></i> </span
             ></a>
           </li>
         </ul>
@@ -747,11 +782,95 @@
           </div>
         </div>
       </section>
+
+      <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Xác nhận tham dự</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row py-3">
+                <div class="form-group">
+                  <input
+                    type="name"
+                    class="form-control"
+                    id="name"
+                    placeholder="Tên của bạn"
+                    required
+                    v-model="name"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 border border-gray-300 rounded p-3 pb-2">
+                <p class="fw-bold text-secondary">Chọn sự kiện tham dự</p>
+
+                <div class="form-check d-inline-block me-4 mb-2">
+                  <input
+                    id="61990349db8f76231c132064"
+                    class="form-check-input"
+                    type="checkbox"
+                    value="LỄ CƯỚI NHÀ GÁI"
+                    name="event_ids[]"
+                    v-model="places"
+                  />
+                  <label for="61990349db8f76231c132064" class="form-check-label"
+                    >LỄ CƯỚI NHÀ GÁI</label
+                  >
+                </div>
+                <div class="form-check d-inline-block me-4 mb-2">
+                  <input
+                    id="61990349db8f76231c132066"
+                    class="form-check-input"
+                    type="checkbox"
+                    value="LỄ CƯỚI NHÀ TRAI"
+                    name="event_ids[]"
+                    v-model="places"
+                  />
+                  <label for="61990349db8f76231c132066" class="form-check-label"
+                    >LỄ CƯỚI NHÀ TRAI</label
+                  >
+                </div>
+                <div class="form-check d-inline-block me-4 mb-2">
+                  <input
+                    id="63842aaa99d79a0fe97294c5"
+                    class="form-check-input"
+                    type="checkbox"
+                    value="TIỆC BÁO HỶ"
+                    name="event_ids[]"
+                    v-model="places"
+                  />
+                  <label for="63842aaa99d79a0fe97294c5" class="form-check-label"
+                    >TIỆC BÁO HỶ</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                @click="saveConfirm"
+              >
+                Xác Nhận
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </Transition>
 </template>
 <script setup lang="ts">
-interface Wish {
+interface FireBaseType {
   id?: string;
   name: string;
   text: string;
@@ -761,7 +880,6 @@ interface Wish {
 import { ref, onMounted, reactive, onUnmounted, Ref } from "vue";
 import { handleMenu } from "./assets/js/handle-menu";
 import { images } from "./assets/js/constant";
-// import DonateModel from "./components/DonateModel.vue";
 // import { Snowfall, SnowflakeOptions } from "./assets/js/snow";
 import { initializeApp } from "firebase/app";
 import {
@@ -791,14 +909,28 @@ const date = new Date("2024-09-25T00:00:00.000Z");
 const loading = ref(true);
 const playing = ref(false);
 const showedGuide = ref(false);
-const messages: Ref<Wish[]> = ref([]);
+const messages: Ref<FireBaseType[]> = ref([]);
+const passengers: Ref<FireBaseType[]> = ref([]);
 const wish = reactive({
   wishName: "",
   wishText: "",
 });
+const name = ref("");
+const places = ref([]);
+const showDs = ref(false);
 let audio = new Audio(
   "https://trinhhuu.s3.ap-southeast-1.amazonaws.com/videoplayback.m4a"
 );
+
+function showConfirm() {
+  // eslint-disable-next-line
+  window.$("#myModal").modal("show");
+}
+
+function hideConfirm() {
+  // eslint-disable-next-line
+  window.$("#myModal").modal("hide");
+}
 
 function saveWish() {
   addDoc(collection(db, "messages"), {
@@ -808,6 +940,17 @@ function saveWish() {
   });
   wish.wishName = "";
   wish.wishText = "";
+}
+
+function saveConfirm() {
+  addDoc(collection(db, "confirmes"), {
+    name: name.value,
+    whereToGo: places.value.join(" , "),
+    date: Date.now(),
+  });
+  name.value = "";
+  places.value = [];
+  hideConfirm();
 }
 function togglePlaying() {
   playing.value = !playing.value;
@@ -887,10 +1030,26 @@ function handleFireBase() {
         text: doc.data().text,
         name: doc.data().name,
         date: doc.data().date,
-      } as Wish;
+      } as FireBaseType;
     });
   });
+
   onUnmounted(livemessages);
+  if (!showDs.value) {
+    return;
+  }
+  const latestconfirmes = query(collection(db, "confirmes"), orderBy("date"));
+  const liveconfirmes = onSnapshot(latestconfirmes, (snapshot) => {
+    passengers.value = snapshot.docs.map((doc) => {
+      return {
+        id: doc.id,
+        text: doc.data().whereToGo,
+        name: doc.data().name,
+        date: doc.data().date,
+      } as FireBaseType;
+    });
+  });
+  onUnmounted(liveconfirmes);
 }
 
 function toggleScrollBtn() {
@@ -952,6 +1111,7 @@ function introAlbum() {
 }
 
 onMounted(async () => {
+  showDs.value = window.location.search.includes("?ds");
   handleFireBase();
   await new Promise<void>((resolve) =>
     setTimeout(() => {
@@ -973,6 +1133,10 @@ onMounted(async () => {
   const imgs = document.getElementsByTagName("img");
   Array.from(imgs).forEach((img) => {
     img.classList.add("lozad");
+  });
+
+  window.$(".carousel").carousel({
+    interval: 3000,
   });
 });
 </script>
