@@ -30,6 +30,20 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
+                src="/images/couple/new/LEE_9372 copy.jpg"
+                class="d-block w-100"
+                alt="/LEE_9372 copy.jpg"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/images/couple/new/LEE_9462 copy.jpg"
+                class="d-block w-100"
+                alt="/LEE_9462 copy.jpg"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
                 src="/images/couple/LEE_8753.jpg"
                 class="d-block w-100"
                 alt="/KAH00777.jpg"
@@ -787,7 +801,7 @@
 
       <div class="modal" tabindex="-1" role="dialog" id="myModal">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
+          <form class="modal-content" @submit.prevent="saveConfirm">
             <div class="modal-header">
               <h5 class="modal-title">Xác nhận tham dự</h5>
               <button
@@ -858,14 +872,13 @@
             </div>
             <div class="modal-footer">
               <button
-                type="button"
+                type="submit"
                 class="btn btn-primary"
-                @click="saveConfirm"
               >
                 Xác Nhận
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </main>
